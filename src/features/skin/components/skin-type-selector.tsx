@@ -48,16 +48,27 @@ export function SkinTypeSelector() {
             key={skinType.value}
             type="button"
             onClick={() => handleSelect(skinType.value)}
-            className={`rounded-3xl border p-6 text-left transition cursor-pointer ${
+            className={`group cursor-pointer rounded-[1.75rem] border p-5 text-left shadow-2xl shadow-black/10 backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 ${
               isSelected
-                ? "border-pink-300 bg-pink-300/10"
-                : "border-white/10 bg-white/5 hover:bg-white/10"
+                ? "border-pink-200/60 bg-pink-200/15"
+                : "border-white/10 bg-white/[0.06] hover:border-white/20 hover:bg-white/[0.1]"
             }`}
           >
-            <h3 className="text-xl font-medium">{skinType.label}</h3>
-            <p className="mt-2 text-sm text-neutral-400">
-              {skinType.description}
-            </p>
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-xl font-semibold">{skinType.label}</h3>
+                <p className="mt-2 text-sm leading-6 text-neutral-300">
+                  {skinType.description}
+                </p>
+              </div>
+              <span
+                className={`mt-1 h-4 w-4 shrink-0 rounded-full border ${
+                  isSelected
+                    ? "border-pink-100 bg-pink-200"
+                    : "border-white/20 bg-white/5 group-hover:border-pink-200/60"
+                }`}
+              />
+            </div>
           </button>
         );
       })}
