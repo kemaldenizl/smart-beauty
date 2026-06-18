@@ -48,10 +48,10 @@ export function SkinTypeSelector() {
             key={skinType.value}
             type="button"
             onClick={() => handleSelect(skinType.value)}
-            className={`rounded-3xl border p-6 text-left transition ${
+            className={`rounded-3xl border p-6 text-left transition cursor-pointer ${
               isSelected
                 ? "border-pink-300 bg-pink-300/10"
-                : "border-white/10 bg-white/5 hover:bg-white/10 cursor-pointer"
+                : "border-white/10 bg-white/5 hover:bg-white/10"
             }`}
           >
             <h3 className="text-xl font-medium">{skinType.label}</h3>
