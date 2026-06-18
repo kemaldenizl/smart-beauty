@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Providers } from "@/shared/components/providers";
 
 type props = {
   children: React.ReactNode;
@@ -7,7 +8,9 @@ type props = {
 export default function RootLayout({ children }: props) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
